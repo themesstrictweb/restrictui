@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "phone-input-default",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/components/phone-input/default.tsx",
+      "content": "",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry\\default\\components\\phone-input\\default.tsx",
+      "content": "",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "type": "registry:component"
+}

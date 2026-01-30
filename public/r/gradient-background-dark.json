@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gradient-background-dark",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "https://restrictui.strict-web.com/r/gradient-background.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/gradient-background/dark.tsx",
+      "content": "import { GradientBackground } from '@/registry/default/ui/gradient-background';\n\nexport default function GradientBackgroundDark() {\n  return (\n    <div className=\"w-full h-64 rounded-lg overflow-hidden\">\n      <GradientBackground\n        className=\"from-slate-900 via-purple-900 to-slate-950\"\n        transition={{ duration: 15, ease: 'easeInOut', repeat: Infinity }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry\\default\\components\\gradient-background\\dark.tsx",
+      "content": "import { GradientBackground } from '@/registry/default/ui/gradient-background';\n\nexport default function GradientBackgroundDark() {\n  return (\n    <div className=\"w-full h-64 rounded-lg overflow-hidden\">\n      <GradientBackground\n        className=\"from-slate-900 via-purple-900 to-slate-950\"\n        transition={{ duration: 15, ease: 'easeInOut', repeat: Infinity }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": ""
+    },
+    {
+      "path": "registry\\default\\ui\\gradient-background.tsx",
+      "content": "'use client';\n\nimport * as React from 'react';\nimport { HTMLMotionProps, motion, type Transition } from 'motion/react';\nimport { cn } from '@/lib/utils';\n\ntype GradientBackgroundProps = HTMLMotionProps<'div'> & {\n  transition?: Transition;\n};\n\nfunction GradientBackground({\n  className,\n  transition = { duration: 10, ease: 'easeInOut', repeat: Infinity },\n  ...props\n}: GradientBackgroundProps) {\n  return (\n    <motion.div\n      data-slot=\"gradient-background\"\n      className={cn(\n        'size-full bg-gradient-to-br from-fuchsia-400 from-0% via-50% via-violet-500 to-fuchsia-600 to-100% bg-[length:300%_300%]',\n        className,\n      )}\n      animate={{\n        backgroundPosition: ['0% 0%', '50% 50%', '100% 0%', '50% 100%', '0% 50%', '100% 100%', '0% 0%'],\n      }}\n      whileTap={{\n        scale: 0.98,\n      }}\n      transition={transition}\n      {...props}\n    />\n  );\n}\n\nexport { GradientBackground, type GradientBackgroundProps };\n",
+      "type": "registry:ui",
+      "target": ""
+    },
+    {
+      "path": "lib\\utils.ts",
+      "content": "import { clsx, type ClassValue } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\n/**\n * Merges Tailwind class names, resolving any conflicts.\n *\n * @param inputs - An array of class names to merge.\n * @returns A string of merged and optimized class names.\n */\nexport function cn(...inputs: ClassValue[]): string {\n  return twMerge(clsx(inputs));\n}\n",
+      "type": "registry:lib",
+      "target": ""
+    }
+  ],
+  "type": "registry:component"
+}
